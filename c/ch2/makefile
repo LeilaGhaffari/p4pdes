@@ -18,6 +18,11 @@ loadsolve: loadsolve.o
 	-${CLINKER} -o loadsolve loadsolve.o  ${PETSC_LIB}
 	${RM} loadsolve.o
 
+# Exercises
+vmkrankzero: vmkrankzero.o
+	-${CLINKER} -o vmkrankzero vmkrankzero.o  ${PETSC_LIB}
+	${RM} vmkrankzero.o
+
 # testing
 runsparsemat_1:
 	-@../testit.sh sparsemat "-mat_view" 1 1
