@@ -4,7 +4,7 @@ set +x
 
 LSEXEC=$1
 EXECNAME=$2
-MPI="mpiexec"
+MPI="mpiexec.hydra"
 
 function run() {
   rm -f tmp
