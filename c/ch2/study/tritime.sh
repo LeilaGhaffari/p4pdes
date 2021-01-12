@@ -12,7 +12,7 @@ set +x
 function run() {
   rm -f tmp
   set -x
-  mpiexec -n $1 ../tri -tri_m 20000000 -ksp_rtol 1.0e-10 -ksp_converged_reason -log_view -ksp_type $2 -pc_type $3 $4 &> tmp
+  mpiexec.hydra -n $1 ../tri -tri_m 20000000 -ksp_rtol 1.0e-10 -ksp_converged_reason -log_view -ksp_type $2 -pc_type $3 $4 &> tmp
   set +x
   grep "Linear solve " tmp
   grep "Time (sec):" tmp | awk '{print $3}'
